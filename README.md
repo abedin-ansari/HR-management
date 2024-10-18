@@ -13,22 +13,6 @@ HR Management is a full-stack application built to streamline and automate essen
    Update/Delete Employees: Modify or remove employee details as required.
    Employee Details: View comprehensive employee details, including their job role and department.
 
-Here is the full updated and detailed README file for your project:
-
-HR Management System (FullStack)
-HR Management is a full-stack application built to streamline and automate essential HR functions, including employee management, time and attendance tracking, payroll processing, and performance management. The system offers a user-friendly interface for both employees and administrators.
-
-Features
-
-1. User Authentication
-   Secure Signup/Login: Authentication through JWT tokens for secure access.
-   Role-Based Access Control: Different views and permissions for admins and employees.
-
-2. Employee Management
-   Add Employee: Admins can add new employees to the system.
-   Update/Delete Employees: Modify or remove employee details as required.
-   Employee Details: View comprehensive employee details, including their job role and department.
-
 3. Time and Attendance Tracking
    Clock-In/Clock-Out: Employees can log their working hours through clock-in/out functionality.
    Geofencing : Employees can clock-in/out only within a defined geographical location.

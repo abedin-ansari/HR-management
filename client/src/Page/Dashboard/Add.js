@@ -1,96 +1,3 @@
-// import React, { useState, useRef, useEffect } from "react";
-// import Swal from "sweetalert2";
-// import { useDispatch } from "react-redux";
-// import { addEmployee } from "../../redux/employee/employeeAction";
-// import axios from "axios";
-
-// function Add({ setIsAdding }) {
-//   const dispatch = useDispatch();
-
-//   // State for new fields
-//   const [firstName, setFirstName] = useState("");
-//   const [lastName, setLastName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [salary, setSalary] = useState("");
-//   const [department, setDepartment] = useState("");
-//   const [phoneNumber, setPhoneNumber] = useState("");
-//   const [address, setAddress] = useState("");
-//   const [jobRole, setJobRole] = useState("");
-//   const [performanceReview, setPerformanceReview] = useState("");
-//   const [file, setFile] = useState(null); // File for document upload
-//   const [date, setDate] = useState("");
-
-//   const textInput = useRef(null);
-
-//   useEffect(() => {
-//     textInput.current.focus();
-//   }, []);
-
-//   const handleAdd = async (e) => {
-//     e.preventDefault();
-
-//     if (
-//       !firstName ||
-//       !lastName ||
-//       !email ||
-//       !salary ||
-//       !department ||
-//       !date ||
-//       !phoneNumber ||
-//       !address ||
-//       !jobRole
-//     ) {
-//       return Swal.fire({
-//         icon: "error",
-//         title: "Error!",
-//         text: "All fields are required.",
-//         showConfirmButton: true,
-//       });
-//     }
-
-//     const newEmployee = {
-//       firstName,
-//       lastName,
-//       email,
-//       salary,
-//       department,
-//       phoneNumber,
-//       address,
-//       jobRole,
-//       date,
-//       performanceHistory: [{ review: performanceReview }],
-//     };
-
-//     // Dispatch action
-//     dispatch(addEmployee(newEmployee));
-
-//     // If document upload is needed
-//     if (file) {
-//       const formData = new FormData();
-//       formData.append("document", file);
-//       await axios.post(
-//         "http://localhost:4050/api/dashboard/uploadDocument",
-//         formData,
-//         {
-//           headers: {
-//             "Content-Type": "multipart/form-data",
-//             Authorization: `Bearer ${localStorage.getItem("token")}`,
-//           },
-//         }
-//       );
-//     }
-
-//     setIsAdding(false);
-
-//     Swal.fire({
-//       icon: "success",
-//       title: "Added!",
-//       text: `${firstName} ${lastName}'s data has been Added.`,
-//       showConfirmButton: false,
-//       timer: 1500,
-//     });
-//   };
-
 import React, { useState, useRef, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
@@ -99,7 +6,6 @@ import { addEmployee } from "../../redux/employee/employeeAction";
 function Add({ setIsAdding }) {
   const dispatch = useDispatch();
 
-  // State for new fields
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -153,10 +59,8 @@ function Add({ setIsAdding }) {
       performanceHistory: [{ review: performanceReview }],
     };
 
-    // Dispatch action
     await dispatch(addEmployee(newEmployee));
 
-    // Reset fields after adding
     setFirstName("");
     setLastName("");
     setEmail("");
